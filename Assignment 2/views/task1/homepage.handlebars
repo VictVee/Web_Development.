@@ -1,0 +1,46 @@
+
+{{#if employees}}
+
+<form>
+{{!-- <div class = "table-responsive"> --}}
+    <table class = "myTable">
+        <caption> Staff Directory</caption>
+        <thead>
+            <th> Id</th>
+            <th >Last Name
+                <a href = "http://localhost:3000/?{{order}}" min="1" max="3"> &#11021;</a>
+                
+            </th>
+            <th>First Name</th>
+            <th>Email address</th>
+            <th>Phone #</th>
+            <th>Address</th>
+            <th>Job Title</th>
+            <th>Select</th>
+        </thead>
+    <tbody>
+    {{#each employees}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{lname}}</td>
+        <td>{{fname}}</td>
+        <td>{{email}}</td>
+        <td>{{ph}}</td>
+        <td>{{address}}</td>
+        <td>{{title}}</td>
+        <td>
+            <label class="checkbox-inline">
+            <input type="checkbox" value={{id}} name="options" class="form-check-input"></label>
+        </td>
+        
+    </tr>
+    {{/each}}
+</tbody>
+
+    </table>
+
+<button type="submit" formaction="/add" formmethod="get" class="btn btn-success">Add new staff member</button>
+    <button type="submit" formaction="/remove" formmethod="get" class="btn btn-success">Remove selected staff members</button>
+    </form>
+{{/if}}
+{{! this is where we display when there are no employees}}

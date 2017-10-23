@@ -1,0 +1,39 @@
+
+body {
+    font:15px arial,sans-serif;
+}
+caption {
+    margin: 0 0 10px 0;
+    padding: 5px;
+    font-size: 24px;
+    background-color: #999;
+    color: #fff;
+}
+table {
+    margin: 10px;
+    width: 100%;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #999;
+}
+th {
+    background: #ccc;
+}
+
+td {
+    color: #000;
+}
+.mytable{
+    background-color: #559855;
+}
+caption, #caption {
+    margin: 0 0 10px 0;
+    padding: 10px;
+    font-size: 24px;
+    background-color: #5cb85c;
+    color: #fff;
+    border-radius: 5px;   
+}
+

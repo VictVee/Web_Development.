@@ -1,0 +1,23 @@
+<h1 id="caption"> Add a new staff member </h1>
+
+<form method="POST">
+<div class="form-group"></div>
+{{!-- <label for="id" --}}
+<label for="lastname"> Last name: </label>
+<input type="text" name="lname" class="form-control" id="lastname" value="{{lname}}"><br>
+<label for = "firstname"> First name:</label>
+<input type="text" name="fname" class="form-control" id="firstname" value="{{fname}}"><br>
+<label for="email"> Email:</label>
+<input type="email" name="email" class="form-control" id="email" value="{{email}}"><br>
+<label for="ph"> Phone number:</label>
+<input type="tel" class="form-control" name="ph" id="ph" title='ph (Format: (09)1234567)' value="{{ph}}"><br>
+<label for="address"> Address:</label>
+<textarea name="address" id="address" class="form-control" rows=1 column=3 value="{{address}}"> </textarea><br>
+<label for="title"> Job title:</label>
+<input type="text" name="title" class="form-control" id="title" value="{{title}}"><br>
+<input type="submit" name="save" value="Save" class="btn btn-success" formaction="/save" > 
+<input type= "reset" name="clear" value="Clear" class="btn btn-success" formaction= "/clear" >
+</div>
+</form>
+{{!--  --}}
+{{!-- pattern="(^\([0]\d{1}\))(\d{7}$)|(^\([0][2]\d{1}\))(\d{6,8}$)|([0][8][0][0])([\s])(\d{5,8}$)"  moved due to testing purposes--}}
