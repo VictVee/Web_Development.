@@ -150,20 +150,15 @@ app.post('/save', function (request, response) {
             console.log(prop + ": " + newemployee[prop]);
             if (!newemployee[prop]) {
                 emptyProp = true;
-                response.redirect("/");
                 break;
-                
-                console.log("hello");
             }
             
         }
-    
-        
         //check for empty property;
         if (emptyProp) {
             // create cookie
             response.cookie("unfinished", newemployee);
-            response.redirect("/add");
+            response.redirect("/");
 
         } else {
             // save information into employees.json
@@ -176,9 +171,18 @@ app.post('/save', function (request, response) {
                 }
             });
             response.clearCookie("unfinished");
-            response.redirect('/')
+            response.redirect('/');
+            
         }
     });
+});
+// HOW DO I use the /Clear to remove the form??
+app.post("/clear", function(request,response){
+    if(newemployee){
+        response.clearCookie('unfinished');
+        
+    }
+    response.redirect("/add");
 });
 
 app.listen(app.get('port'), function () {
